@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Moda ECCI">
+  <rect width="64" height="64" rx="14" fill="#0c0b0a"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#c4a265" stroke-width="1.5" opacity="0.9"/>
+  <path d="M32 32 L32 8 A24 24 0 0 1 52.78 42 Z" fill="#6b2d3c"/>
+  <path d="M32 32 L52.78 42 A24 24 0 0 1 11.22 42 Z" fill="#c4a265"/>
+  <path d="M32 32 L11.22 42 A24 24 0 0 1 11.22 22 Z" fill="#5b8a72"/>
+  <path d="M32 32 L11.22 22 A24 24 0 0 1 32 8 Z" fill="#b07a6a"/>
+  <circle cx="32" cy="32" r="7" fill="#f4efe6"/>
+  <circle cx="32" cy="32" r="3.5" fill="#0c0b0a"/>
+</svg>

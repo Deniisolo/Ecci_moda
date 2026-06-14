@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Moda ECCI">
+  <rect width="180" height="180" rx="38" fill="#0c0b0a"/>
+  <circle cx="90" cy="90" r="68" fill="none" stroke="#c4a265" stroke-width="3" opacity="0.9"/>
+  <path d="M90 90 L90 22 A68 68 0 0 1 148.6 118.5 Z" fill="#6b2d3c"/>
+  <path d="M90 90 L148.6 118.5 A68 68 0 0 1 31.4 118.5 Z" fill="#c4a265"/>
+  <path d="M90 90 L31.4 118.5 A68 68 0 0 1 31.4 61.5 Z" fill="#5b8a72"/>
+  <path d="M90 90 L31.4 61.5 A68 68 0 0 1 90 22 Z" fill="#b07a6a"/>
+  <circle cx="90" cy="90" r="20" fill="#f4efe6"/>
+  <circle cx="90" cy="90" r="10" fill="#0c0b0a"/>
+</svg>

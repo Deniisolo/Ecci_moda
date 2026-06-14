@@ -31,6 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return String(n + 1).padStart(2, "0");
   }
 
+  function updateGalleryI18n(lang) {
+    const t = (key) => (window.ModaECCI ? window.ModaECCI.t(lang, key) : "");
+
+    if (prevBtn) prevBtn.setAttribute("aria-label", t("galeria.prev"));
+    if (nextBtn) nextBtn.setAttribute("aria-label", t("galeria.next"));
+    if (dotsContainer) dotsContainer.setAttribute("aria-label", t("galeria.dots"));
+    if (closeBtn) closeBtn.setAttribute("aria-label", t("galeria.close"));
+
+    dotsContainer.querySelectorAll(".carousel-dot").forEach((dot, i) => {
+      dot.setAttribute("aria-label", `${t("galeria.dot")} ${pad(i)}`);
+    });
+  }
+
   function wrap(index) {
     return ((index % total) + total) % total;
   }
@@ -225,4 +238,9 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCarousel();
   startAutoplay();
   window.addEventListener("resize", updateCarousel);
+
+  updateGalleryI18n(window.ModaECCI ? window.ModaECCI.getLang() : "es");
+  document.addEventListener("languagechange", (e) => {
+    updateGalleryI18n(e.detail.lang);
+  });
 });

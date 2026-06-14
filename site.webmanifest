@@ -1,0 +1,23 @@
+{
+  "name": "Moda ECCI — El Color como Lenguaje",
+  "short_name": "Moda ECCI",
+  "description": "Experiencia académica sobre teoría del color y moda.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0c0b0a",
+  "theme_color": "#0c0b0a",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

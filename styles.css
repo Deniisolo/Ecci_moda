@@ -27,6 +27,7 @@
   --font-body: "Josefin Sans", system-ui, sans-serif;
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --editorial-gap: clamp(3rem, 8vw, 6rem);
+  --top-bar-height: 2.2rem;
 }
 
 *, *::before, *::after {
@@ -81,17 +82,24 @@ a {
   padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
-/* ── Fashion Marquee ── */
-.fashion-marquee {
+/* ── Top bar (marquee + language) ── */
+.top-bar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: 100;
+  display: flex;
+  align-items: stretch;
   background: var(--black);
-  color: var(--cream);
-  overflow: hidden;
   border-bottom: 1px solid rgba(196, 162, 101, 0.3);
+}
+
+.fashion-marquee {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--cream);
 }
 
 .marquee-track {
@@ -121,6 +129,43 @@ a {
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* ── Language switch ── */
+.lang-switch {
+  display: flex;
+  flex-shrink: 0;
+  align-self: center;
+  margin: 0.2rem clamp(0.75rem, 2vw, 1.25rem) 0.2rem 0.35rem;
+  border: 1px solid rgba(196, 162, 101, 0.45);
+  background: rgba(12, 11, 10, 0.6);
+}
+
+.lang-btn {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border: none;
+  background: transparent;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.lang-btn:hover {
+  color: var(--cream);
+}
+
+.lang-btn.is-active {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.lang-btn + .lang-btn {
+  border-left: 1px solid rgba(196, 162, 101, 0.35);
 }
 
 /* ── Hero ── */
@@ -1609,10 +1654,7 @@ a {
   border-top: 1px solid rgba(196, 162, 101, 0.2);
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+.footer-main {
   margin-bottom: 3rem;
 }
 
@@ -1630,14 +1672,6 @@ a {
 }
 
 .site-footer strong { color: var(--cream); }
-
-.footer-sources ul { list-style: none; margin-top: 1rem; }
-
-.footer-sources li {
-  padding: 0.4rem 0;
-  font-size: 0.82rem;
-  border-bottom: 1px solid rgba(244, 239, 230, 0.06);
-}
 
 .site-footer a {
   color: var(--gold);
@@ -1770,11 +1804,24 @@ a {
 
   .gallery-item:nth-child(1) { grid-column: span 2; min-height: 280px; }
 
-  .footer-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
   .fashion-marquee { display: none; }
+
+  .top-bar {
+    justify-content: flex-end;
+    background: transparent;
+    border-bottom: none;
+    pointer-events: none;
+  }
+
+  .lang-switch {
+    pointer-events: auto;
+    margin: 0.55rem clamp(1rem, 3vw, 2rem) 0 0;
+    background: rgba(12, 11, 10, 0.92);
+    backdrop-filter: blur(12px);
+  }
 
   .hero {
     padding-top: 4rem;
